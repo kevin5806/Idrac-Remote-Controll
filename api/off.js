@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 module.exports = async (req, res) => {
     try {
 
@@ -10,21 +8,27 @@ module.exports = async (req, res) => {
                 password: process.env.PASS,
             }
         }
-        
+
+
         const apiUrl = `https://${process.env.IP}/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset`;
 
+        const fetch = await import('node-fetch');
+
         const options = {
+
             method: 'POST',
+
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data),
+
+            body: JSON.stringify(data)
+
         }
 
-        await fetch(apiUrl, options);
+        const response = await fetch.default(apiUrl, options);
 
         res.status(204).end();
-
     } catch (error) {
 
         console.error('Errore durante la richiesta POST:', error);
