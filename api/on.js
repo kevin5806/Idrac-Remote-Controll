@@ -1,31 +1,34 @@
-const axios = require('axios');
+const fetch = require('node-fetch');
 
-export default async (req, res) => {
-    require('dotenv').config();
-
-    const idracIpAddress = process.env.IP;
-    const idracUsername = process.env.USER;
-    const idracPassword = process.env.PASS;
-
-    const powerControlEndpoint = `https://${idracIpAddress}/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset`;
-
-    const powerControlData = {
-        ResetType: 'On',
-    };
-
-    const config = {
-        auth: {
-            username: idracUsername,
-            password: idracPassword,
-        },
-    };
-
+module.exports = async (req, res) => {
     try {
-        const response = await axios.post(powerControlEndpoint, powerControlData, config);
-        console.log('Il server è stato acceso con successo.');
-        res.status(200).json({ message: 'Il server è stato acceso con successo.' });
+
+        const data = {
+            ResetType: 'On',
+            auth: {
+                username: process.env.USER,
+                password: process.env.PASS,
+            }
+        }
+        
+        const apiUrl = `https://${process.env.IP}/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset`;
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        }
+
+        await fetch(apiUrl, options);
+
+        res.status(204).end();
+
     } catch (error) {
-        console.error('Errore durante l\'accensione del server:', error);
-        res.status(500).json({ message: 'Errore durante l\'accensione del server.' });
+
+        console.error('Errore durante la richiesta POST:', error);
+        res.status(500).json({ error: 'Si è verificato un errore durante la richiesta POST' });
+
     }
-};
+}
