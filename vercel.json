@@ -1,0 +1,12 @@
+{
+    "functions": {
+        "api/on.js": {
+            "memory": 1024,
+            "maxDuration": 60
+        },
+        "api/off.js": {
+            "memory": 1024,
+            "maxDuration": 60
+        }
+    }
+}
