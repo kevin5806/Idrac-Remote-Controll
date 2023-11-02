@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
 
         const apiUrl = `https://${process.env.IP}/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset`;
 
-        const https = await import('https');
+        const https = require('https');
         const fetch = await import('node-fetch');
 
         const options = {
@@ -26,9 +26,7 @@ module.exports = async (req, res) => {
 
         res.status(204).end();
     } catch (error) {
-
         console.error('Errore durante la richiesta POST:', error);
         res.status(500).json({ error: 'Si è verificato un errore durante la richiesta POST' });
-
     }
 };
