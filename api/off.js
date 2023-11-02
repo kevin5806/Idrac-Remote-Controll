@@ -1,6 +1,6 @@
-export default async function handler(request, response) {
-    const axios = require('axios');
+const axios = require('axios');
 
+export default async (req, res) => {
     require('dotenv').config();
 
     const idracIpAddress = process.env.IP;
@@ -20,7 +20,12 @@ export default async function handler(request, response) {
         },
     };
 
-    axios.post(powerControlEndpoint, powerControlData, config);
-
-    return response.status(200);
-}
+    try {
+        const response = await axios.post(powerControlEndpoint, powerControlData, config);
+        console.log('Il server è stato acceso con successo.');
+        res.status(200).json({ message: 'Il server è stato acceso con successo.' });
+    } catch (error) {
+        console.error('Errore durante l\'accensione del server:', error);
+        res.status(500).json({ message: 'Errore durante l\'accensione del server.' });
+    }
+};
