@@ -12,8 +12,7 @@ exports.handler = async function (event, context) {
     //body.action = on/off
     //body.pin = "es 213124"
 
-    /* const parsedBody = querystring.parse(event.body); */
-    const {action, pin} = JSON.parse(event.body);
+    const parsedBody = querystring.parse(event.body);
 
     const requestData = {};
 

@@ -6,7 +6,7 @@ let statusRes = "none";
 
 async function updateStatus() {
 
-    statusRes = await fetch('/api/status');
+    statusRes = await fetch('/.netlify/functions/status');
 
     statusRes = await statusRes.json();
 
@@ -24,7 +24,7 @@ async function setPower(action) {
         pin: HTMLinputPin.value
     };
 
-    const res = await fetch('/api/power', {
+    const res = await fetch('/.netlify/functions/power', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

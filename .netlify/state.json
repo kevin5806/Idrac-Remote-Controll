@@ -1,0 +1,19 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "San Bonifacio",
+			"country": {
+				"code": "IT",
+				"name": "Italy"
+			},
+			"subdivision": {
+				"code": "34",
+				"name": "Veneto"
+			},
+			"timezone": "Europe/Rome",
+			"latitude": 45.3926,
+			"longitude": 11.269
+		},
+		"timestamp": 1699052455602
+	}
+}
