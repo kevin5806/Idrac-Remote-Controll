@@ -14,6 +14,11 @@ exports.handler = async (event, context) => {
 
     const requestData = {};
 
+    return {
+        statusCode: 200,
+        body: requestBody.action
+    }
+
     // Azioni da eseguire tramite api
     if (parsedBody.action == "on") {
 
