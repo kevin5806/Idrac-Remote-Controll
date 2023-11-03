@@ -29,7 +29,7 @@ async function setPower(action) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: body.json()
+        body: JSON.stringify(body)
     })
 
     powerRes.innerHTML = `${res.json()}`;
