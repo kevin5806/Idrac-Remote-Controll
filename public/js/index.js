@@ -19,5 +19,3 @@ async function updateStatus() {
     `;
 
 }
-
-updateStatus();
