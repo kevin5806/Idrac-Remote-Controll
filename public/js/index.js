@@ -1,6 +1,5 @@
 const HTMLstatus = document.getElementById("status");
 const HTMLinputPin = document.getElementById("inputPin");
-const HTMLpowerRes = document.getElementById("powerRes");
 
 let statusRes = "none";
 
@@ -35,6 +34,6 @@ async function setPower(action) {
 
         body: data.toString()
 
-    }).then((response) => console.log(response) /* powerRes.innerHTML = `${response.json()}` */);
+    })
 
 }
