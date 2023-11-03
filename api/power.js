@@ -1,4 +1,5 @@
 const axios = require('axios');
+const querystring = require('querystring');
 
 exports.handler = async (event, context) => {
 
@@ -8,19 +9,15 @@ exports.handler = async (event, context) => {
 
     //body.action = on/off
     //body.pin = "es 213124"
-    const reqBody = event.body;
 
-    return {
-        statusCode: 200,
-        body: event.body
-    }
+    const parsedBody = querystring.parse(event.body);
 
     // Azioni da eseguire tramite api
-    if (reqBody.action === "on") {
+    if (parsedBody.action === "on") {
 
         const requestData = { ResetType: "On" }
 
-    } else if (reqBody.action === "off") {
+    } else if (parsedBody.action === "off") {
 
         const requestData = { ResetType: "GracefulShutdown" }
 
@@ -35,7 +32,7 @@ exports.handler = async (event, context) => {
 
     }
 
-    if (reqBody.PIN !== PIN) {
+    if (parsedBody.pin !== PIN) {
         // Pin inviato dal utente errato
 
         return {
