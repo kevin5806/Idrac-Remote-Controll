@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
 
         const response = await axios(redfishEndpoint, { headers });
 
-        const responseData = response || "none";
+        const responseData = response.data || "none";
 
         return {
 
