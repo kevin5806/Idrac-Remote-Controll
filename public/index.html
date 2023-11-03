@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dash</title>
+
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <h1>Kevin Leoni Dell R720 Idrac RedFish api limited controll</h1>
 
     <h3>Server Power: </h3>
+
     <form method="post" action="/api/power">
 
         <input type="password" name="pin" placeholder="PIN">
@@ -17,5 +20,11 @@
         <button type="submit" name="action" value="off">OFF</button>
 
     </form>
+
+    <div id="status">
+
+    </div>
+
+    <script src="js/index.js"></script>
 </body>
 </html>

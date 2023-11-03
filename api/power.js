@@ -52,12 +52,12 @@ exports.handler = async (event, context) => {
             
             const response = await axios.post(redfishEndpoint, requestData, { headers });
 
-            const data = response.data || "none";
+            const responseData = response || "none";
 
             return {
 
                 statusCode: 200,
-                body: JSON.stringify(data)
+                body: JSON.stringify(responseData)
 
             }
 
