@@ -10,16 +10,16 @@ exports.handler = async (event, context) => {
     //body.action = on/off
     //body.pin = "es 213124"
 
-    const parsedBody = querystring.parse(event.body);
+    const parsedBody = await querystring.parse(event.body);
 
     const requestData = {};
 
     // Azioni da eseguire tramite api
-    if (parsedBody.action === "on") {
+    if (parsedBody.action == "on") {
 
         requestData.ResetType = "On";
 
-    } else if (parsedBody.action === "off") {
+    } else if (parsedBody.action == "off") {
 
         requestData.ResetType = "GracefulShutdown";
 
