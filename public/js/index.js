@@ -8,8 +8,14 @@ async function updateStatus() {
 
     statusRes = await statusRes.json();
 
-    console.log(statusRes.Status);
+    statusRes = statusRes.Status;
 
-    HTMLstatus.textContent = statusRes.Status;
+    console.log(statusRes);
+
+    HTMLstatus.innerHTML = `
+        Health: ${statusRes.Health} <br>
+        HealthRollup: ${statusRes.HealthRollup} <br>
+        State: ${statusRes.State}
+    `;
 
 }
