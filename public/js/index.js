@@ -1,6 +1,6 @@
 const HTMLstatus = document.getElementById("status");
 
-const statusRes = "none";
+let statusRes = "none";
 
 async function updateStatus() {
 
