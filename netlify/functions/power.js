@@ -30,7 +30,7 @@ exports.handler = async function (event, context) {
 
         return {
             statusCode: 400,
-            body: "400 on/off not selected"
+            body: "400"
         }
     
     }
@@ -40,7 +40,7 @@ exports.handler = async function (event, context) {
 
         return {
             statusCode: 401,
-            body: "401 no pw/usr"
+            body: "401"
         }
 
     } else {
