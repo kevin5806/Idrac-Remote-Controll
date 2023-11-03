@@ -10,16 +10,14 @@ exports.handler = async (event, context) => {
     //body.pin = "es 213124"
     const reqBody = JSON.parse(event.body);
 
-    const requestData = {};
-
     // Azioni da eseguire tramite api
     if (reqBody.action === "on") {
 
-        requestData = { ResetType: "On" }
+        const requestData = { ResetType: "On" }
 
     } else if (reqBody.action === "off") {
 
-         requestData = { ResetType: "GracefulShutdown" }
+        const requestData = { ResetType: "GracefulShutdown" }
 
     } else {
         // Nessuna azione selezionata
