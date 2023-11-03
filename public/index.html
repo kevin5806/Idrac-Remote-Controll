@@ -10,14 +10,18 @@
 
     <h3>Server Power: </h3>
 
-    <form method="post" action="/api/power">
+    <div>
 
-        <input type="password" name="pin" placeholder="PIN">
+        <input id="inputPin" type="password" name="pin" placeholder="PIN">
 
-        <button type="submit" name="action" value="on">ON</button>
-        <button type="submit" name="action" value="off">OFF</button>
+        <button onclick="setPower('on');">ON</button>
+        <button onclick="setPower('off');">OFF</button>
 
-    </form>
+    </div>
+
+    <div id="powerRes">
+
+    </div>
 
     <h3>Status: </h3>
     <div class="status" id="status">
