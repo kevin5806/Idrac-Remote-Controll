@@ -16,7 +16,7 @@ exports.handler = async (event, context) => {
 
     return {
         statusCode: 200,
-        body: parsedBody
+        body: event.body
     }
 
     // Azioni da eseguire tramite api
