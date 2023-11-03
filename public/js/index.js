@@ -21,19 +21,15 @@ async function setPower(action) {
 
     const data = new URLSearchParams();
 
-    data.append('action', `${action.toString()}`);
-    data.append('pin', HTMLinputPin);
+    data.append('action', `on`);
+    data.append('pin', '1221');
 
     await fetch('/.netlify/functions/power', {
-
         method: 'POST',
-
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-
         body: data.toString()
-
-    })
+    });
 
 }
