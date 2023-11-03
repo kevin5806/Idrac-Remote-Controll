@@ -10,6 +10,11 @@ exports.handler = async (event, context) => {
     //body.pin = "es 213124"
     const reqBody = event.body;
 
+    return {
+        statusCode: 200,
+        body: event.body
+    }
+
     // Azioni da eseguire tramite api
     if (reqBody.action === "on") {
 
