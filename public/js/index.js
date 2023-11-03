@@ -8,7 +8,7 @@ async function updateStatus() {
 
     statusRes = await fetch('/api/status');
 
-    statusRes = await statusRes.json();
+    await JSON.stringify(statusRes);
 
     HTMLstatus.innerHTML = `
         Health: ${statusRes.Health} <br>
@@ -32,7 +32,7 @@ async function setPower(action) {
         body: JSON.stringify(body)
     })
 
-    res = await res.json();
+    await JSON.stringify(res);
 
     powerRes.innerHTML = `${res}`;
 }
