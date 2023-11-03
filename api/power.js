@@ -8,7 +8,7 @@ exports.handler = async (event, context) => {
 
     //body.action = on/off
     //body.pin = "es 213124"
-    const reqBody = JSON.parse(event.body);
+    const reqBody = event.body;
 
     // Azioni da eseguire tramite api
     if (reqBody.action === "on") {
