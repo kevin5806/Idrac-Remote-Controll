@@ -32,7 +32,7 @@ async function setPower(action) {
         body: JSON.stringify(body)
     })
 
-    console.log(res);
+    console.log(await res.json());
 
     powerRes.innerHTML = `${await res.json()}`;
 }
