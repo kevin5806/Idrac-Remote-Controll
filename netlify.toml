@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/api/power"
+  to = "/.netlify/functions/power"
+  status = 200
