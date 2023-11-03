@@ -30,7 +30,7 @@ exports.handler = async function (event, context) {
 
         return {
             statusCode: 400,
-            body: "400"
+            body: JSON.stringify(event)
         }
     
     }
