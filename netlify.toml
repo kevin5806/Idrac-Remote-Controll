@@ -1,9 +1,0 @@
-[[redirects]]
-  from = "/api/power"
-  to = "/.netlify/functions/power"
-  status = 301
-
-[[redirects]]
-  from = "/api/status"
-  to = "/.netlify/functions/status"
-  status = 301
