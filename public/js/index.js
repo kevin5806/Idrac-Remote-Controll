@@ -4,7 +4,7 @@ let statusRes = "none";
 
 async function updateStatus() {
 
-    statusRes = await fetch('/api/status', { method: 'GET' });
+    statusRes = await fetch('/api/status');
 
     console.log(await statusRes.json());
 
