@@ -59,12 +59,14 @@ exports.handler = async (event, context) => {
                 body: JSON.stringify(data)
 
             }
-            
+
         } catch (error) {
+
+            const errorMessage = error.response.data || "error";
 
             return {
                 statusCode: 500,
-                body: JSON.stringify(error.response.data)
+                body: JSON.stringify(errorMessage)
             }
 
         }
