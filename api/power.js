@@ -12,11 +12,6 @@ exports.handler = async (event, context) => {
 
     const parsedBody = querystring.parse(event.body);
 
-    return {
-        statusCode: 200,
-        body: parsedBody
-    }
-
     // Azioni da eseguire tramite api
     if (parsedBody.action === "on") {
 
@@ -55,12 +50,11 @@ exports.handler = async (event, context) => {
         try {
             
             const response = await axios.post(redfishEndpoint, requestData, { headers });
-            const data = response.data;
 
             return {
 
                 statusCode: 200,
-                body: JSON.stringify(data)
+                body: JSON.stringify(response.data)
 
             }
         } catch (error) {
