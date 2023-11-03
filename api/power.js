@@ -13,11 +13,11 @@ exports.handler = async (event, context) => {
     const parsedBody = querystring.parse(event.body);
 
     // Azioni da eseguire tramite api
-    if (parsedBody.action === "on") {
+    if (parsedBody.action == "on") {
 
         const requestData = { ResetType: "On" }
 
-    } else if (parsedBody.action === "off") {
+    } else if (parsedBody.action == "off") {
 
         const requestData = { ResetType: "GracefulShutdown" }
 
@@ -29,7 +29,6 @@ exports.handler = async (event, context) => {
             body: "400"
         }
     
-
     }
 
     if (parsedBody.pin !== PIN) {
