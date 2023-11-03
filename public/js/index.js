@@ -19,10 +19,10 @@ async function updateStatus() {
 }
 
 async function setPower(action) {
-    const body = {};
-
-    body.action = action;
-    body.pin = HTMLinputPin.value;
+    const body = {
+        action: action,
+        pin: HTMLinputPin.value
+    };
 
     const res = await fetch('/api/power', {
         method: 'POST',
