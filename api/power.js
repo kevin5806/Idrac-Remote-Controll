@@ -1,7 +1,9 @@
 const axios = require('axios');
 const querystring = require('querystring');
 
-exports.handler = async (event, context) => {
+require("dotenv").config();
+
+exports.handler = async function (event, context) {
 
     const { USER, PASS, IP, PIN } = process.env;
 
@@ -10,7 +12,8 @@ exports.handler = async (event, context) => {
     //body.action = on/off
     //body.pin = "es 213124"
 
-    const parsedBody = await querystring.parse(event.body);
+    /* const parsedBody = querystring.parse(event.body); */
+    const {action, pin} = JSON.parse(event.body);
 
     const requestData = {};
 
@@ -28,7 +31,7 @@ exports.handler = async (event, context) => {
 
         return {
             statusCode: 400,
-            body: event.body
+            body: "400"
         }
     
     }

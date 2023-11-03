@@ -1,6 +1,8 @@
 const axios = require('axios');
 
-exports.handler = async (event, context) => {
+require("dotenv").config();
+
+exports.handler = async function (event, context) {
 
     const { USER, PASS, IP} = process.env;
 
