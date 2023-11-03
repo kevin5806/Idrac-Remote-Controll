@@ -12,14 +12,16 @@ exports.handler = async (event, context) => {
 
     const parsedBody = querystring.parse(event.body);
 
+    const requestData = {};
+
     // Azioni da eseguire tramite api
     if (parsedBody.action == "on") {
 
-        const requestData = { ResetType: "On" }
+        requestData.ResetType = "On";
 
     } else if (parsedBody.action == "off") {
 
-        const requestData = { ResetType: "GracefulShutdown" }
+        requestData.ResetType = "GracefulShutdown";
 
     } else {
         // Nessuna azione selezionata
