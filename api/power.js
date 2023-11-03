@@ -26,7 +26,7 @@ exports.handler = async (event, context) => {
 
         return {
             statusCode: 400,
-            body: JSON.stringify("400")
+            body: "400"
         }
     
 
@@ -37,7 +37,7 @@ exports.handler = async (event, context) => {
 
         return {
             statusCode: 401,
-            body: JSON.stringify("401")
+            body: "401"
         }
 
     } else {
