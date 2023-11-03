@@ -6,7 +6,7 @@ async function updateStatus() {
 
     statusRes = await fetch('/api/status', { method: 'GET' });
 
-    console.log(statusRes);
+    console.log(await statusRes.json());
 
     HTMLstatus.textContent = await statusRes.json();
 
