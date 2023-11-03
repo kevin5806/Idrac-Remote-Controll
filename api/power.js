@@ -62,11 +62,9 @@ exports.handler = async (event, context) => {
 
         } catch (error) {
 
-            const errorMessage = error.response.data || "error";
-
             return {
                 statusCode: 500,
-                body: JSON.stringify(errorMessage)
+                body: JSON.stringify(error)
             }
 
         }
