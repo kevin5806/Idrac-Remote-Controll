@@ -18,37 +18,23 @@ async function updateStatus() {
 
 }
 
-/* async function setPower(action) {
-
-    const data = {
-        action: "on",
-        pin: HTMLinputPin.value
-    }
-
-    await fetch('/.netlify/functions/power', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then((response) => powerRes.innerHTML = `${response.json()}`)
-
-} */
-
 async function setPower(action) {
 
     const data = new URLSearchParams();
-    data.append('action', 'on');
-    data.append('pin', '1221');
+
+    data.append('action', `${action}`);
+    data.append('pin', HTMLinputPin);
 
     await fetch('/.netlify/functions/power', {
+
         method: 'POST',
+
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
+
         body: data.toString()
-    })
-        .then((response) => /* powerRes.innerHTML = `${response.json()}` */ console.log(response.json()))
+
+    }).then((response) => powerRes.innerHTML = `${response.json()}`);
 
 }

@@ -30,7 +30,7 @@ exports.handler = async function (event, context) {
 
         return {
             statusCode: 400,
-            body: JSON.stringify(event)
+            body: "400 on/off not selected"
         }
     
     }
@@ -40,7 +40,7 @@ exports.handler = async function (event, context) {
 
         return {
             statusCode: 401,
-            body: "401"
+            body: "401 no pw/usr"
         }
 
     } else {
@@ -54,7 +54,7 @@ exports.handler = async function (event, context) {
             
             const response = await axios.post(redfishEndpoint, requestData, { headers });
 
-            const responseData = response.data || "none";
+            const responseData = response.data || "OK";
 
             return {
 
