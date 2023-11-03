@@ -54,7 +54,7 @@ exports.handler = async function (event, context) {
             
             const response = await axios.post(redfishEndpoint, requestData, { headers });
 
-            const responseData = response.data || "OK";
+            const responseData = response.data || "200";
 
             return {
 
