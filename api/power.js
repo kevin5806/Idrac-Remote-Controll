@@ -12,16 +12,14 @@ exports.handler = async (event, context) => {
 
     const parsedBody = await querystring.parse(event.body);
 
-    const requestBody = JSON.parse(event.body);
-
     const requestData = {};
 
     // Azioni da eseguire tramite api
-    if (requestBody.action == "on") {
+    if (parsedBody.action == "on") {
 
         requestData.ResetType = "On";
 
-    } else if (requestBody.action == "off") {
+    } else if (parsedBody.action == "off") {
 
         requestData.ResetType = "GracefulShutdown";
 
@@ -30,7 +28,7 @@ exports.handler = async (event, context) => {
 
         return {
             statusCode: 400,
-            body: requestBody
+            body: event.body
         }
     
     }
