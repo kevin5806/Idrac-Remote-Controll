@@ -28,7 +28,7 @@ exports.handler = async (event, context) => {
 
         return {
             statusCode: 400,
-            body: "400"
+            body: `400 ${parsedBody}`
         }
     
     }
