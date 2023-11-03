@@ -25,7 +25,8 @@ exports.handler = async (event, context) => {
         // Nessuna azione selezionata
 
         return {
-            statusCode: 400
+            statusCode: 400,
+            body: JSON.stringify("400")
         }
     
 
@@ -35,7 +36,8 @@ exports.handler = async (event, context) => {
         // Pin inviato dal utente errato
 
         return {
-            statusCode: 401
+            statusCode: 401,
+            body: JSON.stringify("401")
         }
 
     } else {
@@ -60,7 +62,7 @@ exports.handler = async (event, context) => {
 
             return {
                 statusCode: error.response.status,
-                body: JSON.stringify(error.response.data),
+                body: JSON.stringify(error.response.data)
             }
 
         }
