@@ -6,7 +6,7 @@ async function updateStatus() {
 
     statusRes = await fetch('/api/status');
 
-    await statusRes.json();
+    statusRes = await statusRes.Status.json();
 
     console.log(statusRes);
 
