@@ -1,5 +1,11 @@
 const HTMLstatus = document.getElementById("status");
 
-const statusRes = fetch('/api/status');
+const statusRes = "none";
 
-HTMLstatus.textContent = statusRes;
+async function updateStatus() {
+
+    statusRes = await fetch('/api/status');
+
+    HTMLstatus.textContent = statusRes;
+
+}
