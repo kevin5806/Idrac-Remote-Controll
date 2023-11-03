@@ -8,6 +8,6 @@ async function updateStatus() {
 
     console.log(statusRes);
 
-    HTMLstatus.textContent = statusRes;
+    HTMLstatus.textContent = await statusRes.json();
 
 }
