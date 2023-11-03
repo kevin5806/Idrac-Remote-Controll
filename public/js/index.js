@@ -19,20 +19,19 @@ async function updateStatus() {
 }
 
 async function setPower(action) {
-    const body = {
-        action: action,
-        pin: HTMLinputPin.value
-    };
 
-    const res = await fetch('/.netlify/functions/power', {
+    const data = {
+        action: "on",
+        pin: HTMLinputPin.value
+    }
+
+    await fetch('/.netlify/functions/power', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify(data)
     })
+    .then((response) => powerRes.innerHTML = `${response.json()}`)
 
-    console.log(await res.json());
-
-    powerRes.innerHTML = `${await res.json()}`;
 }
