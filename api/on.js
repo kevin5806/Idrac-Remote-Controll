@@ -2,7 +2,7 @@ const axios = require('axios');
 
 exports.handler = async (event, context) => {
   const { USER, PASS, IP } = process.env;
-  const redfishEndpoint = `https://${IP}/redfish/v1/Systems/1/Actions/ComputerSystem.Reset`;
+  const redfishEndpoint = `https://${IP}/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset`;
 
   const requestData = {
     ResetType: "On",
