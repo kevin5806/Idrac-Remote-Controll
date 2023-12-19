@@ -1,2 +1,2 @@
-# Idrac-Remote-Controll
- Dell Idrac-Remote-Controll
+# Idrac-Remote-Control
+ Dell Idrac-Remote-Control
