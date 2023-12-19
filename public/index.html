@@ -1,33 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Kevin Leoni Idrac RMC</title>
+
+    <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
-    <h1>Kevin Leoni Dell R720 Idrac RedFish api limited controll</h1>
+    <main>
+        <article>
+            <h1>Dell R720 - Remote Controll</h1>
+        </article>
 
-    <h3>Server Power: </h3>
+        <article class="main-img">
+            <img src="assets/images/r720.jpg" alt="Dell R720">
+        </article>
 
-    <div>
+        <article class="controlls">
 
-        <input id="inputPin" type="text" placeholder="PIN">
+            <section class="power">
 
-        <button onclick="setPower('on');">ON</button>
-        <button onclick="setPower('off');">OFF</button>
+                <input id="inputPin" type="text" placeholder="Pin Here ..">
 
-    </div>
+                <span class="buttons">
+                    <span class="on">
+                        <button class="circular-btn" onclick="setPower('on');">
+                            <img height="20px" width="20px" src="assets/svgs/power.svg">
+                        </button>
+                        <p>ON</p>
+                    </span>
+    
+                    <span class="off">
+                        <button class="circular-btn" onclick="setPower('off');">
+                            <img height="20px" width="20px" src="assets/svgs/power.svg">
+                        </button>
+                        <p>OFF</p>
+                    </span>
+                </span>
 
-    <h3>Status: </h3>
-    <div class="status" id="status">
+            </section>
 
-    </div>
+            <section>
 
-    <br>
+                <span class="update">
+                    <h3>Status</h3>
+                    <button class="circular-btn" onclick="updateStatus();"><img height="20px" width="20px" src="assets/svgs/refresh.svg"></button>    
+                </span>
 
-    <button onclick="updateStatus();">Update</button>
+                <div class="status" id="status">
+                </div>
+
+            </section>
+
+        </article>
+
+    </main>
 
     <script src="js/index.js"></script>
 </body>
+
 </html>
