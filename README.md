@@ -1,4 +1,4 @@
-# Idrac-Remote-Control
+# IRC - Idrac Remote Control
 
 Allows a web user to: 
  - Turn ON/OFF
